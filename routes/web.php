@@ -17,10 +17,22 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-//login
+//login admin
 Route::get('/login', 'AdminController@login');
 Route::post('/login/action', 'AdminController@loginAction');
 
-//dashboard
+//dashboard admin
 Route::get('/dashboard', 'DashboardController@index');
 Route::get('/sign-out', 'DashboardController@signOut');
+
+//login customer
+Route::get('/login1', 'CustomerController@login');
+Route::post('/login1/action', 'CustomerController@loginAction');
+
+//dashboard customer
+Route::get('/home', 'HomeController@index');
+Route::get('/logout', 'HomeController@logOut');
+
+
+
+
