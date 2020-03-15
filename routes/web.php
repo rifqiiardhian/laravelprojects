@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//login
+Route::get('/login', 'AdminController@login');
+Route::post('/login/action', 'AdminController@loginAction');
+
+//dashboard
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/sign-out', 'DashboardController@signOut');
