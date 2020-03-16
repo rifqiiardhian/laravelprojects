@@ -9,20 +9,23 @@ class DashboardController extends Controller {
     public function __construct() {}
 
     public function index(Request $request){
+        if($request->session()->get('s_status') == "active"){
             $data['session'] = array(
-                                    'id'        => $request->session()->get('s_id'),
-                                    'nama'      => $request->session()->get('s_nama'),
-                                    'email'     => $request->session()->get('s_email'),
-                                    'username'  => $request->session()->get('s_username'),
-                                    'password'  => $request->session()->get('s_password'),
-                                    'role'      => $request->session()->get('s_role') 
+                'id'        => $request->session()->get('s_id'),
+                'nama'      => $request->session()->get('s_nama'),
+                'email'     => $request->session()->get('s_email'),
+                'username'  => $request->session()->get('s_username'),
+                'password'  => $request->session()->get('s_password'),
+                'role'      => $request->session()->get('s_role'),
+                'status'    => $request->session()->get('s_status')
             );
             // print_r($data);
             $data['title']   = "Dashboard - Inventory";
-                                return view('dashboard_page', $data);
+                        return view('dashboard_page', $data);
             $data['nav_menu'] = $this->displayMenu($request);
-                                return view('dashboard_page', $data);
-    }
+                        return view('dashboard_page', $data);
+            }
+        }
 
     public function signOut(Request $request){
         $request->session()->flush();

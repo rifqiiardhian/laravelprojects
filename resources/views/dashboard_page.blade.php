@@ -47,7 +47,8 @@
                     <h4>ID          :{{$session['id']}}</h4>
                     <h4>NAMA        :{{$session['nama']}}</h4>
                     <h4>USERNAME    :{{$session['username']}}</h4>
-                    <h4>ROLE    :{{$session['role']}}</h4>
+                    <h4>ROLE        :{{$session['role']}}</h4>
+                    <h4>STATUS      :{{$session['status']}}</h4>
                     <a href="{{url('/sign-out')}}"><i class="btn btn-warning"></i>Sign Out</a>
                 </div>
             </div>

@@ -48,8 +48,9 @@
                     <h4>NAMA        :{{$session['nama']}}</h4>
                     <h4>USERNAME    :{{$session['username']}}</h4>
                     <h4>ALAMAT      :{{$session['alamat']}}</h4>
-                    <h4>TELEPON    :{{$session['telepon']}}</h4>
+                    <h4>TELEPON     :{{$session['telepon']}}</h4>
                     <h4>GENDER      :{{$session['gender']}}</h4>
+                    <h4>STATUS      :{{$session['status']}}</h4>
                     <a href="{{url('/logout')}}"><i class="btn btn-warning"></i>Sign Out</a>
                 </div>
             </div>

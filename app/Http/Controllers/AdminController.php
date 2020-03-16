@@ -17,7 +17,7 @@ class AdminController extends Controller {
     public function loginAction(Request $request) {
         $method = $request->method();
         if($method == "POST") {
-            $result = DB::selectOne("SELECT u.id, u.nama, u.username, u.email, u.password, r.nama AS role FROM employee AS u
+            $result = DB::selectOne("SELECT u.id, u.nama, u.username, u.email, u.password, u.status, r.nama AS role FROM employee AS u
             RIGHT JOIN role AS r ON u.role_id = r.id WHERE u.email=? AND u.password=?", [
                 $request->input('email'),
                 $request->input('password')
@@ -30,6 +30,7 @@ class AdminController extends Controller {
                 $request->session()->put('s_password', $result->password);
                 $request->session()->put('s_username', $result->username);
                 $request->session()->put('s_role', $result->role);
+                $request->session()->put('s_status', $result->status);
 
                 // print_r($result);
                 return redirect('/dashboard');

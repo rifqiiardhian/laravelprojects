@@ -31,6 +31,7 @@ class CustomerController extends Controller {
                 $request->session()->put('s_telepon', $result->telepon);
                 $request->session()->put('s_alamat', $result->alamat);
                 $request->session()->put('s_gender', $result->gender);
+                $request->session()->put('s_status', $result->status);
 
                 // print_r($result);
                 return redirect('/home');
